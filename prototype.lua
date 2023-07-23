@@ -127,7 +127,7 @@ function barPrototype:Init()
   self:EnableMouse(true)
   self:SetMovable(true)
   self:SetResizable(true)
-  self:SetMinResize(20, 10)
+  self:SetResizeBounds(20, 10, GetScreenWidth(), GetScreenHeight())
 
   local grip = CreateFrame("Frame", nil, self)
   grip:EnableMouse(true)
@@ -264,7 +264,7 @@ do
     backdrop.edgeFile = LSM:Fetch("border", self.settings.icon.border) or backdrop.edgeFile
     backdrop.edgeSize = self.settings.icon.borderSize or backdrop.edgeSize
 
-    icon:SetClampedToScreen(self.settings.icon.clamp)
+    icon:SetClampedToScreen(true)
 
     icon.tex:ClearAllPoints()
     icon.overlay.tex:ClearAllPoints()
