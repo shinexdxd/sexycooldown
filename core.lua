@@ -108,9 +108,9 @@ function mod:OnInitialize()
 end
 
 function mod:Config(bar)
-	InterfaceOptionsFrame:Hide()
-	ACD3:SetDefaultSize("SexyCooldown", 680, 550)
-	ACD3:Open("SexyCooldown")
+	Settings.OpenToCategory("SexyCooldown")
+	--ACD3:SetDefaultSize("SexyCooldown", 680, 550)
+	--ACD3:Open("SexyCooldown")
 	if bar then
 		self:ShowBarOptions(bar)
 	end
