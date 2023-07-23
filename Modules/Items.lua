@@ -35,11 +35,11 @@ function mod:Refresh()
     end
   end
   for i = 0, 4 do
-    local slots = GetContainerNumSlots(i)
+    local slots = C_Container.GetContainerNumSlots(i)
     for j = 1, slots do
-      local start, duration, active = GetContainerItemCooldown(i,j)
+      local start, duration, active = C_Container.GetContainerItemCooldown(i,j)
       if active == 1 and start > 0 and duration > 3 then
-        local link = GetContainerItemLink(i,j)
+        local link = C_Container.GetContainerItemLink(i,j)
         if link then
           local id = link:match("item:(%d+)")
           local name, _, _, _, _, _, _, _, _, texture = GetItemInfo(id)
